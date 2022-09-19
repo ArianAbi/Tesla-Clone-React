@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    background-color: transparent;
+    background: none;
+    position: fixed;
+    top: 0;
+
+    font-weight: 500;
+
+    width: 100vw;
+    height: 56px;
+    z-index: 100;
+}
+
+.logo {
+    height: 16px;
+}
+
+.items {
+    display: flex;
+}
+
+.nav-items>a {
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin: 0 5px;
+    transition: all 0.2s;
+}
+
+.nav-items>a:hover {
+    background-color: #00000020;
+}

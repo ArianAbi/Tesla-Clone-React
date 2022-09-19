@@ -1,0 +1,54 @@
+.product {
+    height: 100vh;
+    width: 100%;
+
+    padding: 60px 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    scroll-snap-align: start;
+}
+
+.product-container {
+    padding-top: 64px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-container>div>h2 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.description-link {
+    text-decoration: underline;
+}
+
+.button-group>button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 0 12px;
+
+    width: 246px;
+    height: 40px;
+}
+
+.button-dark {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+}
+
+.button-light {
+    color: #2d2d2d;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+}
