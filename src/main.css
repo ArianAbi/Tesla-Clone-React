@@ -1,8 +1,18 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+button {
+    font-weight: 600;
 }
 
 a {
@@ -11,7 +21,5 @@ a {
 }
 
 .container {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
     height: 100vh
 }

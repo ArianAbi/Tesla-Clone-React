@@ -1,38 +1,50 @@
 import { FC } from 'react'
+import { useMediaQuery, Stack } from '@mui/material'
 import './Products.css'
 
 interface Products {
     title: string,
     description: string,
-    backgroundImage: string,
+    desktopBgImage: string,
+    mobileBgImage: string,
     twoButton?: boolean,
     firstButtonText: string,
     secondButtonText?: string,
     descriptionText?: string,
     descriptionLink?: string,
+    fade?: boolean
 }
 
-export const Products: FC<Products> = ({ title, description, backgroundImage, twoButton, firstButtonText, secondButtonText, descriptionText, descriptionLink }) => {
+export const Products: FC<Products> = ({ title, description, desktopBgImage, mobileBgImage, twoButton, firstButtonText, secondButtonText, descriptionText, descriptionLink, fade }) => {
+
+    const isXs = useMediaQuery('(max-width:600px)')
+    const backgroundImage = isXs ? mobileBgImage : desktopBgImage
+
     return (
-        // <div style="background-image:url(./images/1.jfif)" className="product">
         <div
             style={{ backgroundImage: `url(${backgroundImage})` }}
-            className="product"
+            className="section"
         >
-            <div className="product-container">
-                <div>
+            <div className="details">
+                <Stack spacing={1}>
                     <h2>
                         {title}
                     </h2>
-                    <p>
+                    <p >
                         {description}
                         <a href={`${descriptionLink}`} className="description-link">
                             {descriptionText}
                         </a>
                     </p>
-                </div>
+                </Stack>
 
-                <div className="button-group">
+                <Stack
+                    justifyContent="center"
+                    alignItems="center"
+                    direction={{ xs: "column", sm: "row" }}
+                    spacing={{ xs: 2, sm: 0, md: 1 }}
+                    className="button-group"
+                >
                     {twoButton && (
                         <>
                             <button className="button-dark">
@@ -47,14 +59,14 @@ export const Products: FC<Products> = ({ title, description, backgroundImage, tw
 
                     {!twoButton && (
                         <>
-                            <button className="button-dark" style={{ backgroundColor: "black" }}>
+                            <button className="button-dark" style={{ backgroundColor: "#171A20" }}>
                                 <h3>{firstButtonText}</h3>
                             </button>
                         </>
                     )}
 
-                </div>
+                </Stack>
             </div>
-        </div>
+        </div >
     )
 }
